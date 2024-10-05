@@ -1,21 +1,10 @@
 FROM python:3.8-slim
-
-LABEL owner="satheesh"
-LABEL email="test@gmail.com"
-
 WORKDIR /app
-
 
 COPY requirements.txt .
 
 RUN pip install -r requirements.txt 
-# Install required packages
-
+ENV NAME="Jafer"
 COPY . .
-
-ENV NAME="Jafer Default Value"
-
-# Readibility
 EXPOSE 5000
-
 CMD ["python", "app.py"]
